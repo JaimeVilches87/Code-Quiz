@@ -1,7 +1,7 @@
 var questions = []
 
 var score = 0;
-var currentQuestion = -1;
+var currentQuestion = 0;
 var timeLeft = 0;
 var timer;
 
@@ -20,5 +20,35 @@ function start() {
         }
     };
 
+    nextQuestion();
+}
+
+function endGame() {
+
+}
+
+
+function setScore() {
+
+}
+
+function getScore() {
+
+}
+
+function clearScore() {
+
+}
+
+function resetGame() {
+
+}
+
+function corect() {
+    score += 20;
     next();
+}
+
+function nextQuestion() {
+    
 }
