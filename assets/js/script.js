@@ -1,4 +1,6 @@
-var questions = []
+var questions = [
+    
+]
 
 var score = 0;
 var currentQuestion = 0;
@@ -38,14 +40,14 @@ function endGame() {
 
 
 function setScore() {
-    localStorage.setItem("highscore",score);
+    localStorage.setItem("highscore", score);
     localStorage.setItem("highscoreName", document.getElementById('name').value)
     getScore();
 }
 
 function getScore() {
     var quizContent = `
-    <h2>` +localStorage.getItem("highscoreName") + `'s highscore is:</h2>
+    <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
     <h1>` + localStorage.getItem("highscore") + `</h1> <br>
     <button onclick="clearScore()">Clear Score</button>
     <button onclick="resetGame()">Play Again</button>
@@ -80,13 +82,36 @@ function resetGame() {
 
 }
 
-
+function incorrect() {
+    timeLeft -= 15;
+    nextQuestion();
+}
 
 function corect() {
     score += 20;
-    next();
+    nextQuestion();
 }
 
 function nextQuestion() {
-    
+    currentQuestion++;
+
+    if (currentQuestion > questions.length - 1) {
+        endGame();
+        return;
+    }
+
+    var quizContent = "<h2>" + questions[currentQuestion].title + "<h/2>"
+
+    for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].choices.length; buttonLoop++) {
+        var buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>";
+        buttonCode = buttonCode.replace("[CHOICE]", questions[currentQuestion].choices[buttonLoop]);
+        if (questions[currentQuestion].choices[buttonLoop] == questions[currentQuestion].answer) {
+            buttonCode = buttonCode.replace("[ANS]", "correct()");
+        } else {
+            buttonCode = buttonCode.replace("[ANS]", "incorrect()");
+        }
+        quizContent += buttonCode
+
+    }
+    document.getElementById("quizBody").innerHTML = quizContent;
 }
