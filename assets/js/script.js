@@ -63,8 +63,24 @@ function clearScore() {
 }
 
 function resetGame() {
+    clearInterval(timer);
+    score = 0;
+    currentQuestion = 0;
+    timeLeft = 0;
+    timer = null;
+
+    document.getElementById("timeLeft").innerHTML = timeLeft;
+
+    var quizContent = `
+    <h1>JavaScript Quiz</h1> 
+    <h3>Click to Play</h3>
+    <button onclick="start()">Start</button>`;
+
+    document.getElementById("quizBody").innerHTML = quizContent;
 
 }
+
+
 
 function corect() {
     score += 20;
