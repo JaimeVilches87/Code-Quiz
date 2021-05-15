@@ -18,7 +18,8 @@ function start() {
             clearInterval(timer);
             endGame();
         }
-    };
+
+    }, 1000);
 
     nextQuestion();
 }
@@ -26,25 +27,38 @@ function start() {
 function endGame() {
     clearInterval(timer);
 
-    var quizContent = 
+    var quizContent = `
     <h2>Game Over!</h2>
     <h3>You got a + score / 20 + questions correct!</h3>
     <input type="text" id="name" placeholder="Initials">
-    <button onclick="setscore()">Set Score</button>;
+    <button onclick="setscore()">Set Score</button>`;
 
     document.getElementById("quizBody").innerHTML = quizContent;
 }
 
 
 function setScore() {
-
+    localStorage.setItem("highscore",score);
+    localStorage.setItem("highscoreName", document.getElementById('name').value)
+    getScore();
 }
 
 function getScore() {
+    var quizContent = `
+    <h2>` +localStorage.getItem("highscoreName") + `'s highscore is:</h2>
+    <h1>` + localStorage.getItem("highscore") + `</h1> <br>
+    <button onclick="clearScore()">Clear Score</button>
+    <button onclick="resetGame()">Play Again</button>
+    `;
 
+    document.getElementById("quizBody").innerHTML = quizConent;
 }
 
 function clearScore() {
+    localStorage.setItem("highscore", "");
+    localStorage.setItem("highscoreName", "")
+
+    resetGame();
 
 }
 
