@@ -24,7 +24,15 @@ function start() {
 }
 
 function endGame() {
+    clearInterval(timer);
 
+    var quizContent = 
+    <h2>Game Over!</h2>
+    <h3>You got a + score / 20 + questions correct!</h3>
+    <input type="text" id="name" placeholder="Initials">
+    <button onclick="setscore()">Set Score</button>;
+
+    document.getElementById("quizBody").innerHTML = quizContent;
 }
 
 
