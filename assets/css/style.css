@@ -7,6 +7,7 @@
 .count-down {
     float: right;
     padding: 10px 15px;
+    color: var(--primary-color);
 }
 
 .btn {
@@ -16,13 +17,13 @@
 
 header {
     
-    background-color: var(--primary-color);
     display: inline-block;
     width: 98vw;
     margin: 6px;
     border: 3px solid var(--secondary-color);
     border-radius: 5px;
-    
+    background-image: url(../images/header-bg.jpg);
+    background-size: contain;
 }
 
 body {
@@ -39,16 +40,36 @@ button {
     border: none;
     color: var(--primary-color);
     font-size: 17px;
-    background-color: var(--tertiary-color);
+    background-color: black;
     padding: 10px 16px;
     margin: 4px;
     border-radius: 4px;
 }
 
 button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--tertiary-color);
 }
 
 #quiz {
     text-align: center;
+    border: 3px solid var(--secondary-color);
+
+    animation: scroll 70s linear infinite;
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+  color: #eee;
+  height: 100vh;
+  min-width: 360px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  
 }
+
+@keyframes scroll {
+    100%{
+     background-position:0px -3000px;
+   }
+ }
