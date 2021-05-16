@@ -12,15 +12,19 @@
 
 <body>
     <header>
+        <!-- highscore button on top left-->
         <div class="btn">
             <button onclick="getScore()">View High Scores</button>
         </div>
+
+        <!--timer count down on top right-->
         <div class="count-down">
             <p>Time: <span id="timeLeft">0</span></p>
         </div>
 
     </header>
 
+    <!--div containing questions and choices-->
     <div id="quiz">
         <div id="quizBody">
             <h1>
@@ -29,6 +33,8 @@
             <h3>
                 Click to play!
             </h3>
+
+            <!--start quiz button-->     
             <button onclick="start()">Start</button>
         </div>
     </div>
