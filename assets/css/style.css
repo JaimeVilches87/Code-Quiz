@@ -1,0 +1,14 @@
+.count-down {
+    float: right;
+}
+
+.btn {
+    float:left;
+}
+
+header {
+    background-color: white;
+    display: inline-block;
+    width: 98vw;
+    margin: 6px;
+}
