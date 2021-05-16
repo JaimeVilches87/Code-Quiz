@@ -52,13 +52,13 @@ function start() {
 function endGame() {
     clearInterval(timer);
 
-    var quizContent = `
+    var quizResult = `
     <h2>Game Over!</h2>
     <h3>You got a ` + score / 20 + ` questions correct!</h3>
     <input type="text" id="name" placeholder="Initials">
-    <button onclick="setscore()">Set Score</button>`;
+    <button onclick="setScore()">Set Score</button>`;
 
-    document.getElementById("quizBody").innerHTML = quizContent;
+    document.getElementById("quizBody").innerHTML = quizResult;
 }
 
 
@@ -69,14 +69,14 @@ function setScore() {
 }
 
 function getScore() {
-    var quizContent = `
+    var quizScore = `
     <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
     <h1>` + localStorage.getItem("highscore") + `</h1> <br>
     <button onclick="clearScore()">Clear Score</button>
     <button onclick="resetGame()">Play Again</button>
     `;
 
-    document.getElementById("quizBody").innerHTML = quizContent;
+    document.getElementById("quizBody").innerHTML = quizScore;
 }
 
 function clearScore() {
@@ -96,12 +96,12 @@ function resetGame() {
 
     document.getElementById("timeLeft").innerHTML = timeLeft;
 
-    var quizContent = `
-    <h1>JavaScript Quiz</h1> 
+    var quizReset = `
+    <h1>Star Wars Quiz</h1> 
     <h3>Click to Play</h3>
     <button onclick="start()">Start</button>`;
 
-    document.getElementById("quizBody").innerHTML = quizContent;
+    document.getElementById("quizBody").innerHTML = quizReset;
 
 }
 
