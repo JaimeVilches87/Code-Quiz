@@ -1,5 +1,28 @@
-var questions = [
-    
+var questions = [{
+    title: "Who killed the Emperor?",
+    choices: ["Luke", "Leila", "Darth Vader", "He didn't die"],
+    answer: "Darth Vader"
+},
+{
+    title: "What is the color of Obi-Wan's lightsaber?",
+    choices: ["Purple", "Green", "Blue", "Red"],
+    answer: "Blue"
+},
+{
+    title: " Who tells Luke, 'Join me and I will complete your training'?",
+    choices: ["Yoda", "Obi-Wan", "The Emperor", "Darth Vader"],
+    answer: "Darth Vader"
+},
+{
+    title: "What is R2-D2's name often shortened to?",
+    choices: ["D2", "R2", "RD", "22"],
+    answer: "R2"
+},
+{
+    title: "Who told Luke, 'Size matters not'?",
+    choices: ["Obi-Wan", "No one", "Anakin", "Yoda"],
+    answer: "Yoda"
+}
 ]
 
 var score = 0;
@@ -13,7 +36,7 @@ function start() {
     document.getElementById("timeLeft").innerHTML = timeLeft;
 
     timer = setInterval(function () {
-        timerLeft--;
+        timeLeft--;
         document.getElementById("timeLeft").innerHTML = timeLeft;
 
         if (timeLeft <= 0) {
@@ -31,7 +54,7 @@ function endGame() {
 
     var quizContent = `
     <h2>Game Over!</h2>
-    <h3>You got a + score / 20 + questions correct!</h3>
+    <h3>You got a ` + score / 20 + ` questions correct!</h3>
     <input type="text" id="name" placeholder="Initials">
     <button onclick="setscore()">Set Score</button>`;
 
@@ -53,7 +76,7 @@ function getScore() {
     <button onclick="resetGame()">Play Again</button>
     `;
 
-    document.getElementById("quizBody").innerHTML = quizConent;
+    document.getElementById("quizBody").innerHTML = quizContent;
 }
 
 function clearScore() {
@@ -87,7 +110,7 @@ function incorrect() {
     nextQuestion();
 }
 
-function corect() {
+function correct() {
     score += 20;
     nextQuestion();
 }
