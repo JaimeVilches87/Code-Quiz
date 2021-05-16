@@ -59,7 +59,7 @@ function endGame() {
     <h2>Game Over!</h2>
     <h3>You got a ` + score / 20 + ` questions correct!</h3>
     <input type="text" style="text-transform:uppercase" id="name"  placeholder="Initials" onkeyup="this.value = this.value.toUpperCase();">
-    <button onclick="setScore()">Set Score</button>`;
+    <button onclick="setScore()">Save Score</button>`;
 
     document.getElementById("quizBody").innerHTML = quizResult;
 
