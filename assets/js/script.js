@@ -58,20 +58,25 @@ function endGame() {
     var quizResult = `
     <h2>Game Over!</h2>
     <h3>You got a ` + score / 20 + ` questions correct!</h3>
-    <input type="text" id="name" placeholder="Initials">
+    <input type="text" style="text-transform:uppercase" id="name"  placeholder="Initials" onkeyup="this.value = this.value.toUpperCase();">
     <button onclick="setScore()">Set Score</button>`;
 
     document.getElementById("quizBody").innerHTML = quizResult;
+
 }
+
 
 //stores scores on local storage
 function setScore() {
+    
     localStorage.setItem("highscore", score);
-    localStorage.setItem("highscoreName", document.getElementById('name').value)
+    localStorage.setItem("highscoreName", document.getElementById('name').value,)
+    
     getScore();
 }
 
 function getScore() {
+
     var quizScore = `
     <h2>` + localStorage.getItem("highscoreName") + `'s highscore is:</h2>
     <h1>` + localStorage.getItem("highscore") + `</h1> <br>
