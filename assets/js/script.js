@@ -123,7 +123,7 @@ function nextQuestion() {
         return;
     }
 
-    var quizContent = "<h2>" + questions[currentQuestion].title + "<h/2>"
+    var quizContent = "<h2>" + questions[currentQuestion].title + "<h/2><br>"
 
     for (var buttonLoop = 0; buttonLoop < questions[currentQuestion].choices.length; buttonLoop++) {
         var buttonCode = "<button onclick=\"[ANS]\">[CHOICE]</button>";

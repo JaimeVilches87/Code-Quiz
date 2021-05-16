@@ -1,27 +1,54 @@
+:root {
+    --primary-color: white;
+    --secondary-color: red;
+    --tertiary-color: blue;
+  }
+
 .count-down {
     float: right;
+    padding: 10px 15px;
 }
 
 .btn {
-    float:left;
+    float: left;
+    padding: 10px 15px;
 }
 
 header {
     
-    background-color: white;
+    background-color: var(--primary-color);
     display: inline-block;
     width: 98vw;
     margin: 6px;
-    border: 3px solid blue;
+    border: 3px solid var(--secondary-color);
     border-radius: 5px;
     
 }
 
 body {
-    background-color: #cfa3b0;
+    background-color: var(--primary-color);
 }
 
 #quizBody {
     text-align: center;
     padding: 14vh;
+}
+
+
+button {
+    border: none;
+    color: var(--primary-color);
+    font-size: 17px;
+    background-color: var(--tertiary-color);
+    padding: 10px 16px;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+#quiz {
+    text-align: center;
 }
