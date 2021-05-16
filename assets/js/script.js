@@ -25,11 +25,13 @@ var questions = [{
 }
 ]
 
+//setting values for variables
 var score = 0;
 var currentQuestion = 0;
 var timeLeft = 0;
 var timer;
 
+//starts quiz and timer
 function start() {
 
     timeLeft = 75;
@@ -49,6 +51,7 @@ function start() {
     nextQuestion();
 }
 
+//ends game
 function endGame() {
     clearInterval(timer);
 
@@ -61,7 +64,7 @@ function endGame() {
     document.getElementById("quizBody").innerHTML = quizResult;
 }
 
-
+//stores scores on local storage
 function setScore() {
     localStorage.setItem("highscore", score);
     localStorage.setItem("highscoreName", document.getElementById('name').value)
@@ -79,6 +82,7 @@ function getScore() {
     document.getElementById("quizBody").innerHTML = quizScore;
 }
 
+//clears score value and name when the user selects clear score
 function clearScore() {
     localStorage.setItem("highscore", "");
     localStorage.setItem("highscoreName", "")
@@ -87,6 +91,7 @@ function clearScore() {
 
 }
 
+//resets game
 function resetGame() {
     clearInterval(timer);
     score = 0;
@@ -105,16 +110,19 @@ function resetGame() {
 
 }
 
+//reduces time when wrong answer chosen
 function incorrect() {
     timeLeft -= 15;
     nextQuestion();
 }
 
+//increases score when correct answer chosen
 function correct() {
     score += 20;
     nextQuestion();
 }
 
+//chooses next question and loops thru them
 function nextQuestion() {
     currentQuestion++;
 
