@@ -11,7 +11,7 @@
 
 ### This is a Star Wars quiz using HTML, CSS, and Javascript.
 
-This code was created with a huge amount of headaches, sleep-less nights, but most importantly a lot of FUN.
+This code was created with a great amount of sweat, sleep-less nights, but most importantly a lot of FUN.
 
 
 Desktop screen-shot:
