@@ -1,8 +1,8 @@
 ## Challenge: Code Quiz
 
 1. [ Description. ](#description)
-2. [ Web Address. ](#link)
-3. [ Usage tips. ](#quiz)
+2. [ How to Get There. ](#link)
+3. [ Get Started. ](#quiz)
 
 
 <a name="description"></a>
