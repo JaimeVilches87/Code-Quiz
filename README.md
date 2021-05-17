@@ -25,7 +25,7 @@ Desktop screen-shot:
 ### Enter the following web address to access.
 
 ```html
-link address
+https://jaimevilches87.github.io/Code-Quiz/
 ```
 <a name="quiz"></a>
 ## 3. How to Get Started
